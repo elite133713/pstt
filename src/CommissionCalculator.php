@@ -45,7 +45,7 @@ class CommissionCalculator implements CommissionCalculatorInterface
 
         $rate = $this->ratesProvider->getExchangeRate($currency);
 
-        if ($currency === self::EUR_CURRENCY || $rate === 0) {
+        if ($currency === self::EUR_CURRENCY || $rate == 0) {
             $amountFixed = $amount;
         } else {
             $amountFixed = $amount / $rate;
